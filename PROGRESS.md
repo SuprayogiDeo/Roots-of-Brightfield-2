@@ -292,6 +292,17 @@ Internal resolution 480x270, 16x16 tiles, landscape only.
 - Tuning: `COZY_ORIGIN_Y`, `applyCozyBody` (size/offset) in `farmArt.js`; `HAND_COZY` in `fishingPose.js`; boy glyph hand/angles + `girlSeq` timings in `toolAnim.js`.
 - NEXT: Step A2 (crops/items) or A1b (NPC/portrait to match).
 
+## Step A2 — Item icons and crop growth art (tools: Cozy Lands, rest: pack 6)
+- New/replaced icons (16x16) in `public/assets/items/`: Hoe, Axe, Pickaxe, Fishing Rod, Watering Can (= Cozy Lands kettle); Carrot/Corn/Chili/Tomato + their 4 seed packets; Animal Feed (feed sack), Egg, Milk, the 6 fish, Stone, Copper Ore, Gold Ore. Made by `tools/convert_pack6_items.py` (you do NOT need to run it).
+- Crop stages (`public/assets/crops/`, one frame per growth stage = growth days + 1; growth days unchanged): Carrot 4 frames, Chili 4, Tomato 5, Corn 5.
+- Stand-ins (recolored, nearest match in the pack): Carrot = parsnip recolored orange; Tomato = bell pepper (red fruit); Chili = cranberry bush recolored bright red (icon = cucumber recolored red); Corn = okra with golden pods, a TALL plant (16x32 frames; the plot sprite is bottom-anchored, nothing else changed).
+- Code: `assets.js` (new `item_*` manifest keys, corn frame height 32), `BootScene.js` (preloads the new icons). No gameplay change. Works with the Cozy Lands player from Step A1 (no player files touched).
+- Still code-drawn placeholders: Backpack, Salt, Salted Egg, gems (Aquamarine, Ruby, Emerald, Amethyst). Sambal and Coffee dish icons keep their art.
+- Checked: all icons 16x16, sheets have the right frame counts, every named import in `src/` resolves to an export (script). NOT run in a browser: please test on the phone.
+- Incident (resolved): an earlier Pack-6 character package overwrote `farmArt.js` and broke the build (`cozyPrefix` not exported). It is withdrawn; the Cozy Lands player from Step A1 stays. Leftover files from that package can be deleted: `public/assets/characters/npc_*.png`, `player_f.png`, `player_actions_f.png`, `tools/convert_pack6_characters.py`.
+- DECISION taken by default: Corn and Tomato use recolored stand-ins (change if disliked).
+- NEXT: A1b (villagers + dialogue portrait + festival runner to match the Cozy player), then Step A3 (UI).
+
 ## DECISIONS
 - Item, crop, place and NPC names stay English in both languages; only UI text / dialogue is translated.
 - Selling happens at the Shipping Bin next to the field until the Village shop exists.

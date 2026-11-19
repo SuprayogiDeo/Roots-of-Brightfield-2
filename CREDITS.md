@@ -121,6 +121,11 @@ WAV files the project owner supplied under the original names):
 - The boy's tool actions are code-drawn (his idle pose + lean/lunge + small tool glyphs); no Cozy art exists for them.
 - The old Cute Fantasy `player.png` / `player_actions.png` stay as fallback (and as NPC/portrait art).
 
+### Item icons and crops (Step A2)
+- Tool icons (`hoe.png`, `axe.png`, `pickaxe.png`, `fishing_rod.png`, `watering_can.png` = kettle) and `stone.png` — **Cozy Lands Basic** (Amo-QAQ). FREE version = non-commercial only (premium for commercial use).
+- Other icons and crop growth sheets (`items/*`, `crops/*`) — **Farm & Ranch Life (pack 6)**: parsnip (carrot, recolored), bell pepper (tomato), cranberry (chili, recolored), cucumber (chili icon, recolored), okra (corn, recolored), seed packets, feed sack, egg, milk bottle, fish (herring, mackerel, bream, bullhead, sunset koi, carp), copper and gold ore. Edits allowed by its license; no resale/redistribution of the files; no AI training. Author: TODO (name is not in the pack files; read the download page).
+- Replaced and no longer used: the earlier Sunnyside World crop sheets and the Cave Items / CraftPix icons for these items (gems, Sambal and Coffee icons remain from their older sources).
+
 ### Not used yet (kept out of the repo until needed)
 - The rest of **Sunnyside World** (village, NPCs, UI) — planned for Phase 2.
 - The rest of **Pixel Crawler** (dungeon props, mobs, NPCs, stations such as Furnace/Anvil) — candidates for crafting and NPCs.

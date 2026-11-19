@@ -10,7 +10,8 @@ export default class BootScene extends Phaser.Scene {
 
   preload() {
     preloadAssets(this, ['sfx_click', 'item_egg', 'item_milk', 'item_fishing_rod', 'item_pickaxe', 'item_sambal', 'item_coffee',
-      ...FISH_IDS.map((n) => `item_${n}`), ...ORE_IDS.map((n) => `item_${n}`)]);
+      ...FISH_IDS.map((n) => `item_${n}`), ...ORE_IDS.map((n) => `item_${n}`),
+      'item_hoe', 'item_axe', 'item_watering_can', 'item_carrot_seeds', 'item_corn_seeds', 'item_chili_seeds', 'item_tomato_seeds', 'item_carrot', 'item_corn', 'item_chili', 'item_tomato', 'item_animal_feed']);
   }
 
   create() {

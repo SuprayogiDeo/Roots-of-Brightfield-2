@@ -52,9 +52,10 @@ export const ASSET_MANIFEST = {
   // Tool / action poses (Step 4.3): 48x48 frames, 2 columns (wind-up, strike), 12 rows. See systems/toolAnim.js.
   player_actions: { type: 'spritesheet', src: 'assets/characters/player_actions.png', frameWidth: 48, frameHeight: 48 },
 
-  // Crop growth stages — Sunnyside World, one 16x16 frame per stage.
+  // Crop growth stages (Step A2) — Farm & Ranch Life (pack 6), one frame per stage (growth days + 1).
+  // Corn is a tall plant: 16x32 frames (bottom 16 px = the soil tile); the plot sprite is bottom-anchored.
   cropsheet_carrot: { type: 'spritesheet', src: 'assets/crops/carrot.png', frameWidth: 16, frameHeight: 16 },
-  cropsheet_corn: { type: 'spritesheet', src: 'assets/crops/corn.png', frameWidth: 16, frameHeight: 16 },
+  cropsheet_corn: { type: 'spritesheet', src: 'assets/crops/corn.png', frameWidth: 16, frameHeight: 32 },
   cropsheet_chili: { type: 'spritesheet', src: 'assets/crops/chili.png', frameWidth: 16, frameHeight: 16 },
   cropsheet_tomato: { type: 'spritesheet', src: 'assets/crops/tomato.png', frameWidth: 16, frameHeight: 16 },
 
@@ -82,7 +83,20 @@ export const ASSET_MANIFEST = {
   ...Object.fromEntries(ORE_IDS.map((n) => [`item_${n}`, { type: 'image', src: `assets/items/${n}.png` }])),
   item_pickaxe: { type: 'image', src: 'assets/items/pickaxe.png' },
 
-  // Item icons (16x16) — Sunnyside World. Key = `item_<id>`; others are still code-drawn.
+  // Item icons (16x16), key = `item_<id>`. Step A2: tools = Cozy Lands (Amo-QAQ); everything else = Farm & Ranch Life
+  // (pack 6), some recolored (see tools/convert_pack6_items.py). Still code-drawn: Backpack, Salt, Salted Egg, gems.
+  item_hoe: { type: 'image', src: 'assets/items/hoe.png' },
+  item_axe: { type: 'image', src: 'assets/items/axe.png' },
+  item_watering_can: { type: 'image', src: 'assets/items/watering_can.png' },
+  item_carrot_seeds: { type: 'image', src: 'assets/items/carrot_seeds.png' },
+  item_corn_seeds: { type: 'image', src: 'assets/items/corn_seeds.png' },
+  item_chili_seeds: { type: 'image', src: 'assets/items/chili_seeds.png' },
+  item_tomato_seeds: { type: 'image', src: 'assets/items/tomato_seeds.png' },
+  item_carrot: { type: 'image', src: 'assets/items/carrot.png' },
+  item_corn: { type: 'image', src: 'assets/items/corn.png' },
+  item_chili: { type: 'image', src: 'assets/items/chili.png' },
+  item_tomato: { type: 'image', src: 'assets/items/tomato.png' },
+  item_animal_feed: { type: 'image', src: 'assets/items/animal_feed.png' },
   item_egg: { type: 'image', src: 'assets/items/egg.png' },
   item_milk: { type: 'image', src: 'assets/items/milk.png' },
   // Cooking (Step 4.6b): Sambal = Pixel Art Food Icons FREE (soup_1), Coffee = Pixel Art Food Pack (Cup of coffee)
